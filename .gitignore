@@ -1,0 +1,5 @@
+# ignore data files
+*.fasta
+*.fa
+*.tsv
+*.txt
