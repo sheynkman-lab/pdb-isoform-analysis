@@ -1,3 +1,7 @@
+# to find subset gapless matches between pdb chains and gencode isoforms
+
+#%%
+
 from Bio import SeqIO
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
@@ -5,9 +9,10 @@ from difflib import SequenceMatcher
 
 # Load the GENCODE protein sequences into a dictionary
 gencode = {}
-for record in SeqIO.parse("gencode_proteins.fa", "fasta"):
+for record in SeqIO.parse("gencode.v43.pc_translations.fa", "fasta"):
     gencode[str(record.seq)] = record.id
 
+#%%
 # Define a function to check if a query sequence has a match in the GENCODE sequences
 def check_match(query_seq):
     for gencode_seq in gencode:
@@ -29,13 +34,14 @@ def check_match(query_seq):
 
 # Load the query sequences and check for matches in the GENCODE sequences
 matches = {}
-for record in SeqIO.parse("query.fasta", "fasta"):
+for record in SeqIO.parse("../1-get_unique_sequences/pdb_human_seqs_unique.fasta", "fasta"):
     match, start, end = check_match(str(record.seq))
     if match is not None:
         if str(record.id) in matches:
             matches[str(record.id)].append((match, start, end))
         else:
             matches[str(record.id)] = [(match, start, end)]
+#%%
 
 # Output the matches for each query sequence
 for query_id in matches:
