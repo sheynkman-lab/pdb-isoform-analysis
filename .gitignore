@@ -4,3 +4,11 @@
 *.tsv
 *.txt
 *.clstr
+
+.ipynb_checkpoints
+*.pyc
+*.swp
+*.bak
+*pybak*
+*~
+
