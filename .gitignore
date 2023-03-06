@@ -1,5 +1,6 @@
-# assuming there is a dir `data` in the top level of the repo
+# ignore data directories 
 data
+output
 
 
 # ignore data files
