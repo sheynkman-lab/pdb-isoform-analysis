@@ -1,3 +1,7 @@
+# assuming there is a dir `data` in the top level of the repo
+data
+
+
 # ignore data files
 *.fasta
 *.fa
