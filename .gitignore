@@ -1,3 +1,8 @@
+# ignore data directories 
+data
+output
+
+
 # ignore data files
 *.fasta
 *.fa
