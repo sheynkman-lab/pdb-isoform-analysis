@@ -1,11 +1,12 @@
 # ignore data directories 
 data
 output
+Data
 
 
 # ignore data files
 *.fasta
-*.fa
+#*.fa
 *.tsv
 *.txt
 *.clstr
